@@ -1,5 +1,30 @@
 # Project brain
 
+A shared memory system for design and strategy projects. Drop things in, AI organises them, knowledge compounds over time.
+
+## What this is
+
+A project brain is a structured repository that accumulates everything important: research findings, stakeholder insights, decisions, and rationale. Everyone on the team keeps a copy on their machine and can query it with AI.
+
+Unlike scattered docs or wikis that decay, a project brain:
+- **Maintains itself** — you drop raw inputs in, AI extracts and files the useful stuff
+- **Stays queryable** — ask questions in natural language, get answers grounded in actual project knowledge
+- **Generates work** — draft updates, talking points, and analysis from accumulated understanding
+- **Onboards instantly** — new team members get oriented quickly and in formats that work for them
+
+### The problem it solves
+
+On most projects:
+- Good thinking gets repeated because no one remembers it happened
+- Decisions get made but the rationale disappears
+- Context lives in people's heads and gets lost between meetings
+- AI tools produce generic output because they lack project context
+- New people take weeks to get up to speed
+
+This system fixes that by making you the **approver**, not the filer. You do the work. The brain remembers. AI does the organising.
+
+---
+
 ## How to use this
 
 **Drop things in `_inbox/`.** That's it.
