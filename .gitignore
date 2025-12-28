@@ -1,0 +1,15 @@
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor files
+*.swp
+*.swo
+*~
+
+# Processed inbox items can be ignored if you prefer
+# _inbox/_processed/
+
+# Local notes that shouldn't sync
+_local/
+
