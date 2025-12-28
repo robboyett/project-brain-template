@@ -18,5 +18,5 @@ The `.cursorrules` file at the project root defines how Cursor behaves. Key comm
 
 ## Extending
 
-Add new task definitions in `task-library/` if you need specialized processing (e.g., competitor analysis, usability test synthesis).
+Add new task definitions in `task-library/` if you need specialised processing (e.g., competitor analysis, usability test synthesis).
 

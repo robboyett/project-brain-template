@@ -30,7 +30,7 @@ When the user says "process inbox" (or similar):
    - Decision candidates (with context)
    - Insight updates (themes, risks, opportunities)
    - New research notes if substantive
-4. **Summarize** what you processed and what's pending review
+4. **Summarise** what you processed and what's pending review
 5. **Move processed files** to `_inbox/_processed/` with date prefix
 
 ### `review pending`
@@ -133,7 +133,7 @@ _archive/        → Old/superseded content
 
 ---
 
-## Prioritization
+## Prioritisation
 
 As projects grow, not everything is equally relevant. Respect document metadata when answering questions or surfacing information.
 
@@ -143,7 +143,7 @@ As projects grow, not everything is equally relevant. Respect document metadata 
 - `draft` — mention with caveat that it's work in progress
 
 ### Importance
-- `high` — prioritize in summaries and orientations
+- `high` — prioritise in summaries and orientations
 - Unmarked — normal relevance
 
 ### Confidence
@@ -152,7 +152,7 @@ As projects grow, not everything is equally relevant. Respect document metadata 
 - `low` — flag uncertainty when citing ("early hypothesis", "needs validation")
 
 ### In practice
-- When summarizing: lead with high-importance, high-confidence content
+- When summarising: lead with high-importance, high-confidence content
 - When orienting new people: focus on active, high-importance items
 - When asked about something uncertain: be explicit about confidence level
 - Ignore `_archive/` folder unless asked about historical decisions

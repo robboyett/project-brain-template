@@ -20,7 +20,7 @@ User says `process inbox` (or similar).
    - Decision candidates (with context)
    - Insight updates (themes, risks, opportunities)
 4. **Write proposals** to `_pending/REVIEW.md`
-5. **Summarize** what was processed
+5. **Summarise** what was processed
 6. **Move** processed files to `_inbox/_processed/` with date prefix
 
 ## Output rules

@@ -21,7 +21,7 @@ No filing. No remembering where things go. The structure maintains itself.
 
 - `review pending` — walk through pending items interactively
 - `what's in the brain?` — quick project orientation
-- `summarize stakeholder [name]` — get a stakeholder summary
+- `summarise stakeholder [name]` — get a stakeholder summary
 
 ---
 
@@ -39,7 +39,7 @@ No filing. No remembering where things go. The structure maintains itself.
 | Design rationale | `05_design/` |
 | Weekly updates | `06_delivery/updates/` |
 
-You don't need to memorize this — Cursor handles the filing.
+You don't need to memorise this — Cursor handles the filing.
 
 ---
 
@@ -62,7 +62,7 @@ Everyone on the team keeps a copy of this brain on their machine. It's not just 
 Open Cursor (or any AI tool that can read files) and ask:
 
 - "What do we know about Sarah's concerns?"
-- "Summarize the decisions we've made so far"
+- "Summarise the decisions we've made so far"
 - "What are the main risks we've identified?"
 - "What did we learn in the last round of interviews?"
 
@@ -147,10 +147,10 @@ This system fixes that by making knowledge:
 - **Queryable** — ask questions, get grounded answers
 - **Generative** — produce new work from accumulated understanding
 - **Shared** — everyone has the same context
-- **Maintained by AI** — you drop stuff in, it organizes
+- **Maintained by AI** — you drop stuff in, it organises
 
 **You** do the thinking — conversations, research, design.
 **The brain** remembers what was said and decided.
-**AI** does the organizing and retrieval.
+**AI** does the organising and retrieval.
 
 If it ever feels like overhead, simplify. The structure serves you, not the other way around.
