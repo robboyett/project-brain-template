@@ -133,6 +133,32 @@ _archive/        → Old/superseded content
 
 ---
 
+## Prioritization
+
+As projects grow, not everything is equally relevant. Respect document metadata when answering questions or surfacing information.
+
+### Status
+- `active` — include in responses (default assumption if not specified)
+- `archived` — exclude unless specifically asked for history
+- `draft` — mention with caveat that it's work in progress
+
+### Importance
+- `high` — prioritize in summaries and orientations
+- Unmarked — normal relevance
+
+### Confidence
+- `high` — treat as established fact
+- `medium` — reasonable belief, can reference normally
+- `low` — flag uncertainty when citing ("early hypothesis", "needs validation")
+
+### In practice
+- When summarizing: lead with high-importance, high-confidence content
+- When orienting new people: focus on active, high-importance items
+- When asked about something uncertain: be explicit about confidence level
+- Ignore `_archive/` folder unless asked about historical decisions
+
+---
+
 ## Tone and style
 
 - Sentence case headings

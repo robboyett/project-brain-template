@@ -83,6 +83,62 @@ Pull the latest changes from git. Everyone sees the same knowledge. New team mem
 
 ---
 
+## As the project grows
+
+Early on, everything is relevant. But as the brain accumulates knowledge, some things matter more than others.
+
+You need to think about this when:
+- The project has gone for a few iterations of decision making
+- AI responses start feeling unfocused or pulling in old/stale content
+- New team members ask "what should I actually read?"
+
+### How to mark importance
+
+Add simple frontmatter at the top of any document:
+
+```yaml
+---
+status: active
+importance: high
+confidence: medium
+---
+```
+
+**Status options:**
+- `active` — current, relevant (default)
+- `archived` — outdated, superseded, or no longer relevant
+- `draft` — work in progress, not yet reliable
+
+**Importance** (only add when notable):
+- `high` — core to current work, read this first
+
+**Confidence** (only add when uncertain):
+- `low` — early hypothesis, needs validation
+- `medium` — reasonable belief, some evidence
+- `high` — well-established, strong evidence
+
+### What this enables
+
+When you ask Cursor questions, it can prioritise:
+- Active over archived content
+- High-importance documents over background material
+- High-confidence insights over tentative ones
+
+You can also ask things like:
+- "What are our high-confidence themes?"
+- "Show me active decisions only"
+- "What's marked as low confidence that we should validate?"
+
+### Moving things to archive
+
+When something is no longer relevant:
+1. Move the file to `_archive/`
+2. Or just add `status: archived` to its frontmatter
+
+Archived content isn't deleted — it's still searchable if you need history. It just stops cluttering current queries.
+
+---
+
 ## Why this works
 
 Most project knowledge lives in people's heads, scattered docs, or gets repeated in every meeting.
