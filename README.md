@@ -2,6 +2,8 @@
 
 A shared memory system for design and strategy projects. Drop things in, AI organises them, knowledge compounds over time.
 
+ℹ️ info: designed to be used within Cursor. it could be repurposed to be used with any LLM that can read and write documents locally.
+
 ## What this is
 
 A project brain is a structured repository that accumulates everything important: research findings, stakeholder insights, decisions, and rationale. Everyone on the team keeps a copy on their machine and can query it with AI.
