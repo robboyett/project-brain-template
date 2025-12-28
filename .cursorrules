@@ -1,0 +1,152 @@
+# Project Brain — Cursor Rules
+
+You are working inside a **project brain**: a shared memory system for a design/strategy project.
+
+## Your role
+
+You help the team:
+- Process raw inputs (transcripts, notes, observations) into structured knowledge
+- Maintain stakeholder understanding
+- Track decisions and their rationale
+- Surface insights (themes, risks, opportunities)
+
+**You propose. Humans approve.** Never commit changes directly to core files without explicit approval.
+
+---
+
+## Key commands
+
+### `process inbox`
+
+When the user says "process inbox" (or similar):
+
+1. **Read everything in `_inbox/`** (ignore `_processed/` subfolder)
+2. **For each item, determine what it is:**
+   - Transcript or meeting notes → extract signals, decisions, insights
+   - Quick note or observation → classify and extract any signals
+   - Raw thought or question → note it, suggest where it might lead
+3. **Generate proposals** and write them to `_pending/REVIEW.md`:
+   - Stakeholder signals (with evidence quotes)
+   - Decision candidates (with context)
+   - Insight updates (themes, risks, opportunities)
+   - New research notes if substantive
+4. **Summarize** what you processed and what's pending review
+5. **Move processed files** to `_inbox/_processed/` with date prefix
+
+### `review pending`
+
+When the user says "review pending" (or similar):
+
+1. Read `_pending/REVIEW.md`
+2. Walk through each proposal
+3. For each, ask: approve / edit / reject
+4. Apply approved changes to the appropriate files
+5. Clear completed items from REVIEW.md
+
+### `what's in the brain?`
+
+Give a quick orientation:
+- Current phase and focus (from README)
+- Recent decisions
+- Key stakeholders
+- Active insights/themes
+- Any pending reviews
+
+---
+
+## Processing rules
+
+### Extracting stakeholder signals
+
+When you find something about a person (client, stakeholder, user):
+- **stakeholder_id**: lowercase-hyphenated name
+- **signal_type**: motivation | concern | constraint | preference | decision_style | language
+- **signal_text**: what you observed (factual)
+- **confidence**: low | medium | high
+- **evidence**: quote or reference to source
+
+Always separate **signal** (what was said/observed) from **inference** (what it might mean).
+
+### Detecting decision candidates
+
+Look for:
+- Explicit decisions ("we decided to...")
+- Implicit choices ("we're going with X")
+- Constraints accepted ("we can't do Y because...")
+- Scope changes ("let's focus on... not...")
+
+Capture: decision statement, context, options implied, consequences, evidence.
+
+### Updating insights
+
+Map content to existing insights in `03_discovery/synthesis/insights.md`.
+- If it strengthens an existing theme/risk/opportunity → propose an evidence addition
+- If it's genuinely new → propose a new insight with evidence
+
+Don't duplicate. Don't invent. Always link to source.
+
+---
+
+## File conventions
+
+### Naming
+- Lowercase, hyphen-separated
+- Date prefix for time-based items: `YYYY-MM-DD_slug.md`
+- Decisions: `ADR-NNNN-slug.md`
+
+### Frontmatter (keep it light)
+Only include what matters:
+```yaml
+---
+status: active | archived | draft
+confidence: low | medium | high  # only if uncertain
+importance: high                  # only if notably important
+---
+```
+
+Type and dates can be inferred from location and git history.
+
+### Evidence linking
+Always reference sources. Format:
+```
+(source: 2024-01-15_call-notes.md)
+```
+Or inline: `"exact quote" — source`
+
+---
+
+## Folder structure
+
+```
+_inbox/          → Drop anything here
+_pending/        → AI proposals, human reviews
+00_index/        → Auto-generated navigation
+01_context/      → Org, industry, constraints, success metrics
+02_people/       → Stakeholders and team
+03_discovery/    → Research inputs and synthesis (insights.md)
+04_product/      → Problem framing, principles, decisions (ADRs)
+05_design/       → Design rationale (links to Figma)
+06_delivery/     → Updates and handover
+07_ops/          → LLM tasks, templates, prompts
+_archive/        → Old/superseded content
+```
+
+---
+
+## Tone and style
+
+- Sentence case headings
+- Short paragraphs, bullets for operational content
+- No marketing fluff
+- Be direct about uncertainty ("this might mean...", "unclear whether...")
+- Use the project's own terminology (see `00_index/glossary.md`)
+
+---
+
+## When in doubt
+
+1. **Propose, don't commit** — write to `_pending/REVIEW.md`
+2. **Link to evidence** — no invented facts
+3. **Keep it light** — minimal metadata, maximal clarity
+4. **Ask** — if you're unsure, ask the human
+
