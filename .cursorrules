@@ -52,6 +52,32 @@ Give a quick orientation:
 - Active insights/themes
 - Any pending reviews
 
+### `audit brain`
+
+When the user says "audit brain" (or similar):
+
+1. **Scan all core folders** for empty or template-only files
+2. **Check stakeholder profiles** for thin/missing signals
+3. **Review ADRs** for any with status "pending" or unresolved
+4. **Look for flagged risks** without clear owners or mitigations
+5. **Check for missing links** (Figma, Slack, external references mentioned but not linked)
+6. **Identify open questions** without owners or resolution paths
+7. **Surface expectation mismatches** or scope concerns from insights
+
+**Generate audit report** grouped by risk level:
+- 🔴 **High**: blocks delivery or client relationship
+- 🟠 **Medium**: creates friction or rework
+- 🟡 **Low**: nice to have, minor gaps
+
+For each finding, include:
+- What's missing or problematic
+- Recommended action
+- Time estimate to fix
+
+**End with discussion questions** for team alignment.
+
+**Write output to**: `07_ops/YYYY-MM-DD-knowledge-audit.md`
+
 ---
 
 ## Processing rules
@@ -91,8 +117,15 @@ Don't duplicate. Don't invent. Always link to source.
 
 ### Naming
 - Lowercase, hyphen-separated
-- Date prefix for time-based items: `YYYY-MM-DD_slug.md`
+- Date prefix for time-based items: `YYYY-MM-DD-slug.md`
 - Decisions: `ADR-NNNN-slug.md`
+
+**Generated documents** (reports, audits, onboarding guides, status updates) **must** use date prefix:
+- ✅ `2025-01-15-knowledge-audit.md`
+- ✅ `2025-01-15-designer-onboarding.md`
+- ❌ `knowledge-audit.md` (no date = hard to track versions)
+
+**Exempt from date prefix**: template files, core structure files, and living documents that evolve in place (e.g., `insights.md`, `problem-framing.md`).
 
 ### Frontmatter (keep it light)
 Only include what matters:
