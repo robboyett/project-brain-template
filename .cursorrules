@@ -79,6 +79,130 @@ For each finding, include:
 
 ---
 
+## FigJam integration
+
+The project brain integrates with FigJam via a custom sticky note plugin. This allows visual workshopping of insights, stakeholder signals, and decisions on an infinite canvas.
+
+### FigJam plugin syntax
+
+The plugin accepts a simplified markdown format:
+
+```
+/
+First sticky note content
+Can span multiple lines
+
+/
+[Yellow]
+This sticky will be yellow
+Supports **bold** text
+
+/
+[Blue]
+- Bullet point one
+- Bullet point two
+- With [a link](https://example.com)
+
+/
+[Red]
+**Important warning**
+This is a risk we identified
+```
+
+**Syntax reference:**
+- `/` — Start a new sticky note (required before each note)
+- `[Color]` — Set color for this note (Red, Yellow, Blue, Green, Orange, Purple, Pink, Gray)
+- `**text**` — Bold text
+- `[text](url)` — Hyperlink
+- `- item` — Bullet point
+
+**Color conventions for project brain content:**
+- 🟡 `[Yellow]` — Observations, quotes, raw signals
+- 🔵 `[Blue]` — Insights, themes, patterns
+- 🟢 `[Green]` — Opportunities, decisions made, what's working
+- 🔴 `[Red]` — Risks, concerns, blockers
+- 🟠 `[Orange]` — Questions, things to explore
+- 🟣 `[Purple]` — Stakeholder-specific content
+- ⬜ `[Gray]` — Context, background, constraints
+
+### `export for figjam`
+
+When the user asks to export content for FigJam (or says "figjam export", "sticky notes for", etc.):
+
+1. **Identify what to export** — could be:
+   - Specific insights from `03_discovery/synthesis/insights.md`
+   - Stakeholder signals from `02_people/stakeholders/`
+   - Risks and opportunities
+   - Decision options under consideration
+   - Research observations
+   - Custom selection the user specifies
+
+2. **Format as FigJam plugin syntax:**
+   - One sticky per discrete insight/signal/item
+   - Apply appropriate color based on content type
+   - Use bold for key phrases
+   - Include source references as links where useful
+   - Keep each sticky concise (aim for scannable in FigJam)
+
+3. **Output in a code block** so user can copy directly
+
+**Example output:**
+
+```
+/
+[Yellow]
+**"We need this to feel less like a tool"**
+Direct quote from Sarah, hints at emotional positioning concern
+(source: 2024-01-15 call)
+
+/
+[Blue]
+**Theme: Trust signals are weak**
+Multiple stakeholders mentioned credibility concerns
+Evidence in 3 separate interviews
+
+/
+[Red]
+**Risk: Timeline pressure**
+Launch date is fixed, scope is not
+May force uncomfortable tradeoffs
+
+/
+[Orange]
+**To explore:** What does "success" look like for the ops team?
+No clear answer yet from any stakeholder
+```
+
+### `import from figjam`
+
+When the user pastes FigJam plugin format content (or says "import these stickies", "from figjam", etc.):
+
+1. **Parse the sticky notes** — extract content and color
+2. **Classify each sticky** based on color and content:
+   - Yellow stickies → likely raw observations or quotes
+   - Blue stickies → synthesised insights
+   - Red stickies → risks to track
+   - Green stickies → opportunities or decisions
+   - Orange stickies → open questions
+3. **Propose updates** to appropriate brain files:
+   - New insights → propose additions to `insights.md`
+   - New risks → propose additions to insights or flagged items
+   - Decisions made → propose new ADR candidates
+   - New questions → propose additions to relevant files
+4. **Write proposals to `_pending/REVIEW.md`** as usual
+
+The user may have workshopped, grouped, or refined stickies in FigJam. Treat imported content as potentially more refined than original exports.
+
+### Tips for effective FigJam round-trips
+
+- **Export focused sets** — don't dump the whole brain, export what's relevant for the workshop
+- **Use color consistently** — helps the team scan and cluster quickly
+- **Keep stickies atomic** — one insight/signal/risk per sticky
+- **Re-import selectively** — not everything from a workshop needs to come back
+- **Note what changed** — if a sticky was refined in FigJam, the new version is likely better
+
+---
+
 ## Processing rules
 
 ### Extracting stakeholder signals
