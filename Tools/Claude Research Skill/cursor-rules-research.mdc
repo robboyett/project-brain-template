@@ -1,0 +1,71 @@
+---
+description: Deep research workflow for populating project brain context
+globs:
+  - "01_context/**"
+  - "_pending/**"
+alwaysApply: false
+---
+
+# Research workflow
+
+When asked to research a client, company, industry, or build project context:
+
+## Quick triggers
+
+- "Research [company]" → Full company research package
+- "Build context for [project]" → Project-focused research  
+- "Industry analysis for [sector]" → Industry deep-dive
+- "Who are the stakeholders?" → Stakeholder mapping
+
+## Research sequence
+
+For comprehensive client research:
+
+1. **Company basics** → What they do, how they make money, scale, leadership
+2. **Industry context** → Market structure, major players, key terminology
+3. **Competitive position** → Direct/indirect competitors, basis of competition
+4. **Constraints** → Regulations, compliance, operational constraints
+5. **Synthesis** → Pull it together into actionable project context
+
+## Output files
+
+All research outputs go to `_pending/` for review:
+
+- `company-profile.md` — What the company does, business model, leadership
+- `industry-landscape.md` — Market structure, players, terminology
+- `competitive-position.md` — Where they sit vs competitors
+- `constraints-and-regulations.md` — What limits or governs the business
+- `market-dynamics.md` — Forces shaping the market
+- `stakeholder-landscape.md` — Decision-makers and influencers
+- `business-context.md` — Project-specific synthesis
+
+## File frontmatter
+
+```yaml
+---
+type: research
+status: pending
+confidence: [high|medium|low]
+sources: [number]
+date: YYYY-MM-DD
+researcher: Claude
+---
+```
+
+## Quality markers
+
+- `[VERIFY]` — Single source or inference required
+- `[ASK CLIENT]` — Need client input to confirm
+
+## Confidence levels
+
+- **High**: Multiple authoritative sources agree
+- **Medium**: Single authoritative source or reasonable inference
+- **Low**: Limited sources or significant inference required
+
+## After research
+
+1. Review generated files in `_pending/`
+2. Edit/approve via `_pending/REVIEW.md`
+3. Move approved content to `01_context/`
+4. Update `00_index/` if needed

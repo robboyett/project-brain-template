@@ -25,6 +25,43 @@ On most projects:
 
 This system fixes that by making you the **approver**, not the filer. You do the work. The brain remembers. AI does the organising.
 
+### How it flows
+
+```
+┌─────────────────────┐                    ┌─────────────────────┐
+│  CAPTURE            │                    │  ENRICH             │
+│                     │                    │                     │
+│  Docs, transcripts, │                    │  Claude research    │
+│  images, notes      │                    │  skills add context │
+│                     │                    │                     │
+└─────────┬───────────┘                    └──────────┬──────────┘
+          │                                           │
+          │            ┌───────────────┐              │
+          │            │               │              │
+          └───────────►│  PROJECT      │◄─────────────┘
+                       │  BRAIN        │
+          ┌───────────►│               │◄─────────────┐
+          │            │  Markdown in  │              │
+          │            │  smart folders│              │
+          │            └───────┬───────┘              │
+          │                    │                      │
+          │                    ▼                      │
+┌─────────┴───────────┐     OUTPUT     ┌──────────────┴──────────┐
+│  WORKSHOP           │                │  GENERATE               │
+│                     │                │                         │
+│  FigJam stickies    │◄───────────────│  Onboarding docs,       │
+│  for visual work    │                │  status updates,        │
+│  (round-trips back) │                │  audits, analysis       │
+└─────────────────────┘                └─────────────────────────┘
+```
+
+| Flow | What goes in/out | How |
+|------|------------------|-----|
+| **Capture** | Docs, transcripts, images, quick notes | Drop in `_inbox/`, run `process inbox` |
+| **Enrich** | Industry context, competitor research | Claude research skill generates context files |
+| **Generate** | Onboarding guides, status updates, audits | Ask Cursor to draft from brain knowledge |
+| **Workshop** | Insights, risks, decisions as stickies | `export for figjam` → work visually → `import from figjam` |
+
 ---
 
 ## How to use this
@@ -65,6 +102,7 @@ No filing. No remembering where things go. The structure maintains itself.
 | Org/industry context | `01_context/` |
 | Design rationale | `05_design/` |
 | Weekly updates | `06_delivery/updates/` |
+| Integration tools | `Tools/` |
 
 You don't need to memorise this — Cursor handles the filing.
 
@@ -77,6 +115,7 @@ You don't need to memorise this — Cursor handles the filing.
 - [Stakeholders](./02_people/stakeholders/)
 - [Insights](./03_discovery/synthesis/insights.md)
 - [Decisions](./04_product/decisions/)
+- [Tools](./Tools/) — integrations for moving data in/out
 
 ---
 
@@ -107,6 +146,43 @@ Use the brain to draft real outputs:
 ### Stay in sync
 
 Pull the latest changes from git. Everyone sees the same knowledge. New team members get oriented in minutes, not days.
+
+---
+
+## Tools
+
+The project brain integrates with external tools to help move information in and out fluidly.
+
+### Claude research skill
+
+A skill for Claude that conducts desk research and generates structured context files for the brain. Team members can ask Claude to research clients, industries, or competitive landscapes — outputs land in `_pending/` ready for review.
+
+**Setup:** See [Tools/Claude Research Skill/INTEGRATION-GUIDE.md](./Tools/Claude%20Research%20Skill/INTEGRATION-GUIDE.md)
+
+**Example prompts:**
+- "Research Acme Corp for the new project"
+- "Build industry context for healthcare tech"
+- "What's the competitive landscape in fintech lending?"
+
+### MD ↔ FigJam plugin
+
+A FigJam plugin that converts markdown into sticky notes. Export insights, risks, or stakeholder signals from the brain and paste them into FigJam for visual workshopping.
+
+**Install:** [MD ↔ FigJam](https://www.figma.com/community/plugin/1588947011514620624/md-figjam) on the Figma Community
+
+**Workflow:**
+1. Ask Cursor to `export for figjam` with the content you want
+2. Copy the output
+3. Paste into the plugin in FigJam
+4. Workshop, cluster, and refine on the canvas
+5. Export from the plugin and paste back into Cursor to `import from figjam`
+
+The cursor rules include colour conventions so exports are consistent:
+- 🟡 Yellow — observations, quotes, raw signals
+- 🔵 Blue — insights, themes, patterns
+- 🟢 Green — opportunities, decisions, what's working
+- 🔴 Red — risks, concerns, blockers
+- 🟠 Orange — questions, things to explore
 
 ---
 
