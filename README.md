@@ -27,33 +27,7 @@ This system fixes that by making you the **approver**, not the filer. You do the
 
 ### How it flows
 
-```
-┌─────────────────────┐                    ┌─────────────────────┐
-│  CAPTURE            │                    │  ENRICH             │
-│                     │                    │                     │
-│  Docs, transcripts, │                    │  Claude research    │
-│  images, notes      │                    │  skills add context │
-│                     │                    │                     │
-└─────────┬───────────┘                    └──────────┬──────────┘
-          │                                           │
-          │            ┌───────────────┐              │
-          │            │               │              │
-          └───────────►│  PROJECT      │◄─────────────┘
-                       │  BRAIN        │
-          ┌───────────►│               │◄─────────────┐
-          │            │  Markdown in  │              │
-          │            │  smart folders│              │
-          │            └───────┬───────┘              │
-          │                    │                      │
-          │                    ▼                      │
-┌─────────┴───────────┐     OUTPUT     ┌──────────────┴──────────┐
-│  WORKSHOP           │                │  GENERATE               │
-│                     │                │                         │
-│  FigJam stickies    │◄───────────────│  Onboarding docs,       │
-│  for visual work    │                │  status updates,        │
-│  (round-trips back) │                │  audits, analysis       │
-└─────────────────────┘                └─────────────────────────┘
-```
+![How the project brain flows — capture, enrich, generate, workshop](./Tools/TeamOS-Diagram.png)
 
 | Flow | What goes in/out | How |
 |------|------------------|-----|
