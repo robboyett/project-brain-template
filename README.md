@@ -75,6 +75,7 @@ No filing. No remembering where things go. The structure maintains itself.
 | Problem framing | `04_product/problem-framing.md` |
 | Org/industry context | `01_context/` |
 | Design rationale | `05_design/` |
+| Prototypes | `05_design/prototypes/` |
 | Weekly updates | `06_delivery/updates/` |
 | Integration tools | `Tools/` |
 
@@ -116,6 +117,32 @@ Use the brain to draft real outputs:
 - "Draft talking points for the steering committee"
 - "Compare our findings to what the client originally asked for"
 - "Suggest what we should explore next based on the themes"
+
+### Build prototypes
+
+The brain includes structure for coded prototypes in `05_design/prototypes/`. This keeps prototype planning, builds, and learnings connected to the rest of the project knowledge.
+
+**The workflow:**
+
+1. **Start with a brief** — copy `_prototype-brief-template.md` into a new folder. Define your hypothesis, success criteria, and time box.
+
+2. **Build the prototype** — code lives in the folder (simple builds) or link to an external repo (complex builds).
+
+3. **Document learnings** — copy `_prototype-log-template.md` and capture what you validated, invalidated, and what surprised you.
+
+4. **Close the loop** — if the prototype informs a decision, create or update an ADR. If it surfaces new insights, add them to `insights.md`.
+
+**Example folder:**
+
+```
+05_design/prototypes/2025-01-04-checkout-flow-v2/
+├── brief.md        ← What we're testing
+├── log.md          ← What we learned
+├── index.html      ← The build (or link to repo)
+└── screenshots/    ← Visual documentation
+```
+
+Prototypes are disposable — they exist to learn, not to ship. The value is in the documented learnings that feed back into the brain.
 
 ### Stay in sync
 

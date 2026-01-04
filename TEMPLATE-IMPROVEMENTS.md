@@ -6,11 +6,36 @@ Reflections on what could be improved in this project brain template for future 
 
 ## Backlog
 
-_No pending improvements._
+### 5. Insight citation linking
+**Status**: Idea
+
+Each extracted insight should cite back to its source document(s). Currently evidence is noted inline, but a more robust approach could:
+- Add structured `sources:` field in insight entries
+- Link directly to the original file in `_inbox/_processed/` or research notes
+- Enable traceability: "where did we learn this?"
+
+**Open questions:**
+- What format for citations? YAML list? Inline links?
+- Should this be enforced by cursor rules during `process inbox`?
 
 ---
 
 ## Completed
+
+### ✅ 4. Prototype housing
+**Implemented**: 2026-01-04
+
+Added structure for coded prototypes in `05_design/prototypes/`:
+- `README.md` — explains folder structure, when to create prototypes, naming conventions
+- `_prototype-brief-template.md` — captures hypothesis, success criteria, scope, time box
+- `_prototype-log-template.md` — documents learnings, iterations, recommendations
+
+Design decisions:
+- Builds can live in-folder (simple) or link externally (complex)
+- Each prototype gets its own folder with brief + log + build
+- Date prefixes optional but useful for sequencing iterations
+
+---
 
 ### ✅ 1. Robust file processing pipeline
 **Implemented**: 2025-12-29
@@ -58,5 +83,5 @@ Added `audit brain` command to `.cursorrules` with:
 
 ---
 
-_Last updated: 2025-12-29 (all backlog items implemented)_
+_Last updated: 2026-01-04_
 

@@ -281,7 +281,7 @@ _pending/        → AI proposals, human reviews
 02_people/       → Stakeholders and team
 03_discovery/    → Research inputs and synthesis (insights.md)
 04_product/      → Problem framing, principles, decisions (ADRs)
-05_design/       → Design rationale (links to Figma)
+05_design/       → Design rationale, prototypes (links to Figma)
 06_delivery/     → Updates and handover
 07_ops/          → LLM tasks, templates, prompts
 _archive/        → Old/superseded content
